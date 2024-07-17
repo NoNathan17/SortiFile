@@ -10,13 +10,16 @@ def browse_directory():
 
 def organize_files():
     directory = Path(directory_path.get())
-    try:
-        main.determine_file(directory)
-        messagebox.showinfo('Success!', 'Files sorted successfully!')
-    except FileNotFoundError:
-        messagebox.showerror('File Not Found.', 'The directory given does not exist.')
-    except Exception as e:
-        messagebox.showerror('There was an error.', e)
+    if str(directory).strip() == '.':
+        messagebox.showerror('Error', 'Please specific a directory.')
+    else:
+        try:
+            main.determine_file(directory)
+            messagebox.showinfo('Success!', 'Files sorted successfully!')
+        except FileNotFoundError:
+            messagebox.showerror('Error', 'The specified directory does not exist.')
+        except Exception as e:
+            messagebox.showerror('Error', e)
 
 root = tk.Tk()
 root.title('File Organizer')
