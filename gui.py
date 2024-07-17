@@ -10,11 +10,12 @@ def browse_directory():
 
 def organize_files():
     directory = Path(directory_path.get())
+    sort_by = sorting_method.get()
     if str(directory).strip() == '.':
         messagebox.showerror('Error', 'Please specific a directory.')
     else:
         try:
-            main.determine_file(directory)
+            main.determine_file(directory, sort_by)
             messagebox.showinfo('Success!', 'Files sorted successfully!')
         except FileNotFoundError:
             messagebox.showerror('Error', 'The specified directory does not exist.')
