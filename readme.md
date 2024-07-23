@@ -8,4 +8,9 @@ Allows users to sort a specified directory by file extension or date created.
 1. Begin by downloading the executable as ZIP file
 2. In your downloads, unzip the file
 3. Navigate to the directory titled "dist"
-4. Run the standalone executable "main.exe" on your device
+
+### Windows Users
+4. Run the standalone executable "main.exe" on your device 
+
+### MAC Users
+4. Run the standalone executable "main.app" on your device
