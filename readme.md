@@ -1,7 +1,7 @@
 ## File Organizer 
 
-##### A simple file organizer built with Python, utilizing the Tkinter library for a user-friendly GUI. 
-##### Allows users to sort a specified directory by file extension or date created. 
+A simple file organizer built with Python, utilizing the Tkinter library for a user-friendly GUI. 
+Allows users to sort a specified directory by file extension or date created. 
 
 ## How to use
 
