@@ -17,12 +17,10 @@ def sort_by_extension(directory: Path, file: Path):
     new_folder = create_new_extension_folder(directory, file_suffix)
     new_folder.mkdir(parents=True, exist_ok=True)
     shutil.move(str(file), str(new_folder))
-                
 
 def create_new_extension_folder(directory: Path, suffix: str) -> Path:
     new_folder = directory / f"{suffix}s folder"
     return new_folder
-
 
 def sort_by_date(directory: Path, file: Path): 
     try:
@@ -36,7 +34,6 @@ def sort_by_date(directory: Path, file: Path):
     new_folder = create_new_date_folder(directory, month, year)
     new_folder.mkdir(parents=True, exist_ok=True)
     shutil.move(str(file), str(new_folder))
-
 
 def create_new_date_folder(directory: Path, month, year) -> Path:
     new_folder = directory / f"{month} {year}"
