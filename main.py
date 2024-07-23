@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil
 from datetime import datetime
+import gui
 
 def determine_file(directory: Path, sort_by: str):
     for file in directory.iterdir():
@@ -17,13 +18,25 @@ def sort_by_extension(directory: Path, file: Path):
     new_folder.mkdir(parents=True, exist_ok=True)
     shutil.move(str(file), str(new_folder))
                 
+
 def create_new_extension_folder(directory: Path, suffix: str) -> Path:
     new_folder = directory / f"{suffix}s folder"
-
     return new_folder
 
-def sort_by_date(directory: Path, file: Path):
-    pass
 
-def create_new_date_folder(directory: Path, month, year):
-    pass
+def sort_by_date(directory: Path, file: Path): # fix this shi
+    creation_time = datetime.fromtimestamp(file.stat().st_ctime)
+    month = creation_time.strftime("%B")
+    year = creation_time.strftime("%Y")
+
+    new_folder = create_new_date_folder(directory, month, year)
+    new_folder.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(file), str(new_folder))
+
+
+def create_new_date_folder(directory: Path, month, year) -> Path:
+    new_folder = directory / f"{month} {year}"
+    return new_folder
+
+if __name__ == "__main__":
+    gui.root.mainloop()
