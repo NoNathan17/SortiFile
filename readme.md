@@ -12,5 +12,5 @@ Allows users to sort a specified directory by file extension or date created.
 ### Windows Users
 4. Run the standalone executable "main.exe" on your device 
 
-### MAC Users
+### Mac Users
 4. Run the standalone executable "main.app" on your device
