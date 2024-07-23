@@ -49,5 +49,3 @@ sort_by_date.grid(row=2, column=1, padx=10, pady=10, sticky="w")
 
 organize_button = tk.Button(root, text="Organize Files", command=organize_files)
 organize_button.grid(row=3, column=0, columnspan=3, pady=20)
-
-root.mainloop()
