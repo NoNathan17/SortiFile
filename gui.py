@@ -19,6 +19,8 @@ def organize_files():
             messagebox.showinfo('Success!', 'Files sorted successfully!')
         except FileNotFoundError:
             messagebox.showerror('Error', 'The specified directory does not exist.')
+        except PermissionError:
+            messagebox.showerror('Error', 'Permission denied. You do not have access to edit this directory.')
         except Exception as e:
             messagebox.showerror('Error', e)
 
