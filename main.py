@@ -24,8 +24,12 @@ def create_new_extension_folder(directory: Path, suffix: str) -> Path:
     return new_folder
 
 
-def sort_by_date(directory: Path, file: Path): # fix this shi
-    creation_time = datetime.fromtimestamp(file.stat().st_ctime)
+def sort_by_date(directory: Path, file: Path): 
+    try:
+        creation_time = datetime.fromtimestamp(file.stat().st_birthtime) 
+    except AttributeError:
+        creation_time = datetime.fromtimestamp(file.stat().st_ctime) 
+
     month = creation_time.strftime("%B")
     year = creation_time.strftime("%Y")
 
