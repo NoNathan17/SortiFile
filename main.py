@@ -35,7 +35,7 @@ def sort_by_date(directory: Path, file: Path):
     new_folder.mkdir(parents=True, exist_ok=True)
     shutil.move(str(file), str(new_folder))
 
-def create_new_date_folder(directory: Path, month, year) -> Path:
+def create_new_date_folder(directory: Path, month: str, year: str) -> Path:
     new_folder = directory / f"{month} {year}"
     return new_folder
 
